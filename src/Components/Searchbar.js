@@ -17,8 +17,8 @@ const Searchbar = ({text, setView}) =>{
 
 	
 	return (<div>
-				<form className="container ui form center aligned">
-					<div className="ui right labeled input">
+				<form className="ui container form center aligned">
+					<div className="ui right labeled input" style={{marginRight:'100px'}}>
 						<div className="ui basic label" onClick={(e)=>{showpublished(e)}}><i aria-hidden="true" className="search icon"></i></div>
 							<input 
 									type="text" 

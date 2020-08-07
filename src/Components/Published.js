@@ -30,13 +30,22 @@ const Published = ({title}) =>{
 						<div>Text : {d.text}</div>
 					</div>);
 			})
-			// console.log(prop)
+			
 		);
 	}
-	return (
-		<div style={{ height: '500px', overflowY: 'scroll' }}>
-			 {title==='' ? display() : displaytosearch()}
-		</div>
+	const has = () =>{
+		if(data.length===0){
+			return <div>No blogs available!!</div>;
+		}else{
+			return (<div style={{ height: '500px', overflowY: 'scroll' }}>
+						{title==='' ? display() : displaytosearch()}
+					</div>)
+		}
+	}
+
+	return (<div>
+				{has()}
+			</div>		 
 	);
 };
 

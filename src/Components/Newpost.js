@@ -45,7 +45,7 @@ const Newpost = () =>{
 					</div>
 					
 					<div>
-						<button  onClick={validate} className="ui button" type="submit">Publish</button>
+						<button  onClick={(e)=>{validate(e)}} className="ui button" type="submit">Publish</button>
 					</div>
 					<div style={{ padding:'10px', color:'green'}}>{add}</div>
 				</form>

@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 import {Createblog} from './Action';
 
 
-const Published = (prop) =>{
+const Published = ({title}) =>{
 	const data = State().getState().blog
-	console.log(prop.title)
+	
 	const displaytosearch = () =>{
 		return(
 			data.map((d, index)=>{
-				if(d.title===prop.title){
+				if(d.title===title){
 					return(<div className='ui segment' key={index}>
 						<div>Title : {d.title}</div>
 						<div>Text : {d.text}</div>
@@ -33,12 +33,9 @@ const Published = (prop) =>{
 			// console.log(prop)
 		);
 	}
-	const show = () => {
-		return prop.title == '' ? display() : displaytosearch()
-	}
 	return (
 		<div style={{ height: '500px', overflowY: 'scroll' }}>
-			 {show()}
+			 {title==='' ? display() : displaytosearch()}
 		</div>
 	);
 };
